@@ -72,7 +72,7 @@ Main Feature
 
     -   TODO: why calendar won't show up?
 
-![](fig/calendar.png)
+<img src="fig/calendar_box.png" width="1920" />
 
 -   Database Tab:
 

@@ -109,7 +109,7 @@ knitr::include_graphics("fig/chat_box_03.png")
     - TODO: why calendar won't show up?
 
 ```{r calendar, echo=FALSE, cache=TRUE}
-knitr::include_graphics("fig/calendar.png")
+knitr::include_graphics("fig/calendar_box.png")
 ```
 
 + Database Tab:
