@@ -1,7 +1,7 @@
 require(shiny)
 require(ygdashboard)
 
-setwd("d:/guang/packages/ygdashboard/app/")
+setwd("f:/technism/r/r_pkgs/ygdashboard/app/")
 
 # runApp(appDir = getwd(), port = 8572)
 

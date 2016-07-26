@@ -46,3 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .Rproj.user
+.Rhistory
+
+# shinyapps.io
+rsconnect

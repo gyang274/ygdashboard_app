@@ -17,6 +17,8 @@ At last, I would like to have versatile boxes, so I implements a calendar box, a
 
 Along the way, I find that `leafletfix.css:8` in leaflet overrides shinydashboard css and makes the `sidebarUserPanel()` having grey box prominent from the black background - unconformable aesthetically - fix it by adding `style="background-color:transparent;"` in `div(class = "user-panel", ..., div(class = "pull-left info", ...))` in `sidebarUserPanel()`. I also find that font awesome icon like `envira` is not recognized in shiny - all 30 new icons in 4.6 won't? Please see full development log at [ygdashboard on github](https://github.com/gyang274/ygdashboard/).
 
+Welcome to view this [ygdashboard app on shinyapps.io](https://gyang.shinyapps.io/ygdashboard/)!
+
 Main Feature
 ------------
 
