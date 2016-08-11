@@ -50,18 +50,20 @@ ui <- dashboardPage(
     ),
     
     dropdownMenu(
+      
       type = "tasks", badgeStatus = "success",
-      taskItem(value = 99, color = "green",
-               "Project X"
+      
+      taskItem(
+        value = 99, color = "green", text = "Project X"
       ),
-      taskItem(value = 17, color = "red",
-               "Server Deployment"
+      taskItem(
+        value = 17, color = "red", text = "Server Deployment"
       ),
-      taskItem(value = 74, color = "yellow",
-               "Documentation"
+      taskItem(
+        value = 74, color = "yellow", text = "Documentation"
       ),
-      taskItem(value = 85, color = "aqua",
-               "Overall project"
+      taskItem(
+        value = 85, color = "aqua", text = "Overall project"
       )
     )
     
@@ -85,6 +87,8 @@ ui <- dashboardPage(
       menuItem("Chat", tabName = "chat", icon = icon("comments"), badgeLabel = "new", badgeColor = "yellow"),
       
       menuItem("Calendar", tabName = "clnd", icon = icon("calendar")),
+      
+      menuItem("Carousel", tabName = "krsl", icon = icon("spinner")),
       
       menuItem("Database", tabName = "db", icon = icon("database")), 
       
@@ -153,9 +157,9 @@ ui <- dashboardPage(
           valueBox(value = 23, subtitle = "valueBox Type1", icon = icon("credit-card"), color = "green", width = 4),
           
           valueBox(value = 42, subtitle = "valueBox Type1", icon = icon("thumbs-o-up"), color = "purple", width = 4)
+          
         )
 
-        
       ),
       
       tabItem(
@@ -213,6 +217,51 @@ ui <- dashboardPage(
         # TODO: check why not work? ...
         calendarBox(title = "My Calendar")
         
+      ),
+      
+      tabItem(
+        
+        tabName = "krsl",
+        
+        h2("Carousel Slide Show"),
+        
+        carouselBox(
+          
+          title = "Carousel Box", footer = "Carousel Box Footer", status = "success", 
+          solidHeader = TRUE, background = NULL, width = 12L, # height = 400L,
+          collapsible = TRUE, collapsed = FALSE,
+          
+          carouselSets(
+            
+            id = "carousel-example",
+            
+            carouselItem(
+              
+              tags$img(src = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/exmachina.jpg"), style="width:100%; height:auto;"), 
+              
+              caption = "Ex Machina"
+              
+            ),
+            
+            carouselItem(
+              
+              tags$img(src = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/walle.jpg"), style="width:100%; height:auto;"), 
+              
+              caption = "Wall E"
+              
+            ),
+            
+            carouselItem(
+              
+              tags$img(src = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/dc.jpg"), style="width:100%; height:auto;"), 
+              
+              caption = "Dr. D.C."
+              
+            )
+            
+          )
+          
+        )
         
       ),
       

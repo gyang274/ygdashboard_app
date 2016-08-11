@@ -152,6 +152,10 @@ knitr::include_graphics("fig/timeline.png")
 knitr::include_graphics("fig/documentation.png")
 ```
 
+## NEWS
+
++ 2016.08.08: Add __Carousel Tab__ with `carouselBox()`, `carouselSets()`, `carouselItem()` from `boxes.R` in `ygdashboard`.
+
 ## TODO
 
 + dashboardControlbar.R: create functions that can create sub-components in control-sidebar, like functions defined in dashboardSidebar.R.

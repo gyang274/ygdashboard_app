@@ -102,6 +102,11 @@ Main Feature
 
 <img src="fig/documentation.png" width="1920" />
 
+NEWS
+----
+
+-   2016.08.08: Add **Carousel Tab** with `carouselBox()`, `carouselSets()`, `carouselItem()` from `boxes.R` in `ygdashboard`.
+
 TODO
 ----
 
