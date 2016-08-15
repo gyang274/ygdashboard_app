@@ -105,7 +105,9 @@ Main Feature
 NEWS
 ----
 
--   2016.08.08: Add **Carousel Tab** with `carouselBox()`, `carouselSets()`, `carouselItem()` from `boxes.R` in `ygdashboard`.
+-   2016.08.10: Add `socialWidgetBox()` on **Chat Tab**, source from `boxes.R` in `ygdashboard`.
+
+-   2016.08.08: Add `carouselBox()`, `carouselSets()`, `carouselItem()` on **Carousel Tab**, source from `boxes.R` in `ygdashboard`.
 
 TODO
 ----

@@ -7,7 +7,12 @@ ui <- dashboardPage(
   #- header
   dashboardHeader(
     
-    title = HTML('<b>YG</b> Dashboard'), titleWidth = 300, 
+    title = HTML(paste0(
+      '<span class = "logo-lg"><b>YG</b> Dashboard</span>',
+      '<span class = "logo-mini"><b>GY</b></span>'
+    )),
+    
+    titleWidth = 300, 
     
     user = userOutput("user"), # user = dashboardUser(),
     
@@ -116,7 +121,9 @@ ui <- dashboardPage(
       menuSegmentOutput(outputId = "dynamicSidebarLabel"),
                 
       menuItem("Important", icon = icon("circle-o text-red")),
+      
       menuItem("Warning", icon = icon("circle-o text-yellow")),
+      
       menuItem("Information", icon = icon("circle-o text-aqua"))
       
     )
@@ -140,12 +147,25 @@ ui <- dashboardPage(
         
         fluidRow(
           
-          infoBox(title = "infoBox Type1", value = 22, subtitle = "ok!", icon = icon("download"), color = "aqua"),
+          infoBox(
+            
+            title = "infoBox Type1", value = 22, subtitle = "ok!", icon = icon("download"), color = "aqua"
+            
+          ),
           
-          infoBox(title = "infoBox Type2", value = 23, icon = icon("cloud-download"), color = "green", fill = TRUE),
+          infoBox(
+            
+            title = "infoBox Type2", value = 23, icon = icon("cloud-download"), color = "green", fill = TRUE
+            
+          ),
           
-          infoBox(title = "infoBox Type2 Plus", value = 42, icon = icon("thumbs-o-up"), color = "purple",
-                  fill = TRUE, prog = "New in YG Dashboard - Progress: 98% complete!", prog.width = "98%")
+          infoBox(
+            
+            title = "infoBox Type2 Plus", value = 42, icon = icon("thumbs-o-up"), color = "purple",
+            
+            fill = TRUE, prog = "New in YG Dashboard - Progress: 98% complete!", prog.width = "98%"
+            
+          )
           
         ),
         
@@ -168,7 +188,7 @@ ui <- dashboardPage(
         
         chatBox(
           title = "Direct Chat Box", textInputId = "chatText", btnInputId = "chatBtn",
-          solidHeader = TRUE, background = NULL, width = 12, newMessage = 10,
+          solidHeader = TRUE, background = NULL, width = 6, newMessage = 10,
           contactList = chatContactList(
             chatContact(
               name = "Ex Machina",
@@ -190,20 +210,66 @@ ui <- dashboardPage(
             )
           ),
           chatMessage(
-            name = "Guang Yang", 
+            name = "Guang Yang",
             image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/yg.jpg"),
-            text = "Welcome!", 
-            position = "left", 
+            text = "Welcome!",
+            position = "left",
             timestamp = "07-02-2016"
           ),
           chatMessage(
-            name = "Ex Machina", 
+            name = "Ex Machina",
             image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/exmachina.jpg"),
             text = "Hi, YG! Thank you and the RStudio team for the excellent dashboard template!",
-            position = "right", 
+            position = "right",
             timestamp = "07-02-2016"
           ),
           chatMessageOutput("dynamicChatMessage")
+        ),
+        
+        socialWigetBox(
+          name = "Guang Yang", 
+          image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/yg.jpg"),
+          description = "Alchemist",
+          stat1 = "100", subStat1 = "Posts",
+          stat2 = "2048", subStat2 = "Followers",
+          stat3 = "1024", subStat3 = "Following",
+          background = "purple",
+          backgroundImage = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/preikestolen.jpg"),
+          width = 6L,
+          contactList = chatContactList(
+            chatContact(
+              name = "Ex Machina",
+              image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/exmachina.jpg"),
+              date = "05-26-2009",
+              text = "Hello World!"
+            ),
+            chatContact(
+              name = "Wall E",
+              image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/walle.jpg"),
+              date = "08-26-2000",
+              text = "Here, Here!"
+            ),
+            chatContact(
+              name = "Dr. D.C.",
+              image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/dc.jpg"),
+              date = "09-26-1990",
+              text = "May the 4th be with you."
+            )
+          ),
+          chatMessage(
+            name = "Guang Yang",
+            image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/yg.jpg"),
+            text = "Welcome!",
+            position = "left",
+            timestamp = "07-02-2016"
+          ),
+          chatMessage(
+            name = "Ex Machina",
+            image = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/exmachina.jpg"),
+            text = "Hi, YG! Thank you and the RStudio team for the excellent dashboard template!",
+            position = "right",
+            timestamp = "07-02-2016"
+          )
         )
         
       ),
@@ -233,11 +299,11 @@ ui <- dashboardPage(
           
           carouselSets(
             
-            id = "carousel-example",
+            id = "carouselExample",
             
             carouselItem(
               
-              tags$img(src = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/exmachina.jpg"), style="width:100%; height:auto;"), 
+              tags$p(style="text-align:center", tags$img(src=paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/exmachina.jpg"), style="width:auto; height:400px;")), 
               
               caption = "Ex Machina"
               
@@ -245,7 +311,7 @@ ui <- dashboardPage(
             
             carouselItem(
               
-              tags$img(src = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/walle.jpg"), style="width:100%; height:auto;"), 
+              tags$p(style="text-align:center", tags$img(src=paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/walle.jpg"), style="width:auto; height:400px;")), 
               
               caption = "Wall E"
               
@@ -253,7 +319,7 @@ ui <- dashboardPage(
             
             carouselItem(
               
-              tags$img(src = paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/dc.jpg"), style="width:100%; height:auto;"), 
+              tags$p(style="text-align:center", tags$img(src=paste0("ygdashboard", "-", as.character(utils::packageVersion("ygdashboard")), "/img/dc.jpg"), style="width:auto; height:400px;")), 
               
               caption = "Dr. D.C."
               
@@ -261,7 +327,9 @@ ui <- dashboardPage(
             
           )
           
-        )
+        ),
+        
+        textOutput(outputId = "carouselActiveItem")
         
       ),
       

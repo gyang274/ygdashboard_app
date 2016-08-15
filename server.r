@@ -134,6 +134,10 @@ shinyServer(function(input, output, session) {
   output$dynamicSidebarLabel <- renderMenu({ menuSegment(text="LABELS") })
   
   
+  #- create carouselActiveItem reponses to carousel slide
+  output$carouselActiveItem <- renderText({ paste0("You're at Carousel #", input$carouselExample) })
+  
+  
   #- create chatMessage responses to user text input and button hit
   create_dynamicChatMessage <- eventReactive(input$chatBtn, {
     
